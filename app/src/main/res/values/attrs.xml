@@ -5,6 +5,8 @@
     <attr name="text_color" format="color"/>
     <attr name="text" format="string"/>
     <attr name="theme_color" format="color"/>
+    <attr name="background_color" format="color"/>
+    <attr name="line_color" format="color"/>
 
 
     <declare-styleable name="customButton">
@@ -20,5 +22,12 @@
         <attr name="text_size"/>
         <attr name="text_color"/>
         <attr name="theme_color"/>
+    </declare-styleable>
+
+    <declare-styleable name="SatSkyView">
+        <attr name="text_size"/>
+        <attr name="text_color"/>
+        <attr name="background_color"/>
+        <attr name="line_color"/>
     </declare-styleable>
 </resources>

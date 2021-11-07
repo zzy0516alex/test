@@ -59,7 +59,16 @@
         android:layout_height="wrap_content"
         android:text="usb test"
         android:layout_below="@+id/scroll_layout_view"
-        android:layout_toRightOf="@+id/custom_btn"/>
+        android:layout_toRightOf="@+id/custom_btn"
+        android:layout_margin="10dp"/>
+    <Button
+        android:id="@+id/sat_sky_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="satsky test"
+        android:layout_below="@+id/scroll_layout_view"
+        android:layout_toRightOf="@+id/usb_test"
+        android:layout_margin="10dp"/>
     <com.z.test.myView.IconTextButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

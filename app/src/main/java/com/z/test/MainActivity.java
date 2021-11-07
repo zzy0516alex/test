@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         final Button btn_anim_quit = findViewById(R.id.anim_quit);
         final customButton btn_cus=findViewById(R.id.custom_btn);
         final Button btn_usb=findViewById(R.id.usb_test);
+        final Button btn_satsky=findViewById(R.id.sat_sky_test);
         ll_bottom = findViewById(R.id.translate_anim_test);
         ll_bottom.setVisibility(View.INVISIBLE);
         ll_top = findViewById(R.id.translate_anim_test2);
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         btn_anim.setOnClickListener(onclick);
         btn_anim_quit.setOnClickListener(onclick);
         btn_usb.setOnClickListener(onclick);
+        btn_satsky.setOnClickListener(onclick);
         btn_cus.setOnBtnSelectListener(new customButton.OnBtnSelectListener() {
 
             @Override
@@ -172,6 +174,8 @@ public class MainActivity extends AppCompatActivity {
                     ll_bottom.startAnimation(translateAnimation2);
                     ll_bottom.setVisibility(View.INVISIBLE);
                     break;
+                case R.id.sat_sky_test:
+                    startActivity(new Intent(MainActivity.this,SatSkyActivity.class));
                 default:
             }
         }
