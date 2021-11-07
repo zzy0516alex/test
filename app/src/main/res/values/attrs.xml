@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="icon" format="reference"/>
+    <attr name="text_size" format="dimension"/>
+    <attr name="text_color" format="color"/>
+    <attr name="text" format="string"/>
+    <attr name="theme_color" format="color"/>
+
+
+    <declare-styleable name="customButton">
+        <attr name="icon"/>
+        <attr name="text_size"/>
+        <attr name="text_color"/>
+        <attr name="text"/>
+    </declare-styleable>
+
+    <declare-styleable name="IconTextButton">
+        <attr name="icon"/>
+        <attr name="text"/>
+        <attr name="text_size"/>
+        <attr name="text_color"/>
+        <attr name="theme_color"/>
+    </declare-styleable>
+</resources>
