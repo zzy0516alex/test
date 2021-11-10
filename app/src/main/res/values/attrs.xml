@@ -7,6 +7,7 @@
     <attr name="theme_color" format="color"/>
     <attr name="background_color" format="color"/>
     <attr name="line_color" format="color"/>
+    <attr name="icon_size" format="dimension"/>
 
 
     <declare-styleable name="customButton">
@@ -29,5 +30,6 @@
         <attr name="text_color"/>
         <attr name="background_color"/>
         <attr name="line_color"/>
+        <attr name="icon_size"/>
     </declare-styleable>
 </resources>
