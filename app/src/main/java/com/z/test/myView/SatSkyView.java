@@ -20,6 +20,7 @@ import com.z.test.R;
 import com.z.test.Utils.ScreenUtil;
 import com.z.test.bean.Sat;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SatSkyView extends View {
@@ -40,7 +41,7 @@ public class SatSkyView extends View {
     private int text_size;
     private int text_color;
 
-    Sat sat;
+    private ArrayList<Sat> sats = new ArrayList<>();
 
     public SatSkyView(Context context) {
         this(context,null);
@@ -73,8 +74,6 @@ public class SatSkyView extends View {
         Typeface font = Typeface.create(Typeface.SANS_SERIF,Typeface.NORMAL);
         TextPaint.setTypeface(font);
 
-        sat = new Sat(2, 4, 60, 180);
-
         //回收
         att_list.recycle();
     }
@@ -94,7 +93,28 @@ public class SatSkyView extends View {
         drawBackgroundCircle(canvas,center,radius);
         drawDividingLine(canvas,center,radius);
         drawScale(canvas,center,radius);
-        drawSatellite(canvas,sat);
+        for (Sat sat : sats) {
+            drawSatellite(canvas,sat);
+        }
+    }
+
+    public void setSats(ArrayList<Sat> sats) {
+        this.sats = sats;
+    }
+
+    public void addSats(Sat sat){
+        this.sats.add(sat);
+    }
+
+    public void setSats(GnssStatus gnssStatus){
+        this.sats.clear();
+        for (int i = 0; i < gnssStatus.getSatelliteCount(); i++) {
+            Sat sat = new Sat(gnssStatus.getSvid(i),
+                    gnssStatus.getConstellationType(i),
+                    gnssStatus.getElevationDegrees(i),
+                    gnssStatus.getAzimuthDegrees(i));
+            addSats(sat);
+        }
     }
 
     /**
